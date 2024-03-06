@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Result</title>
+</head>
+<body>
+<h2>Upload Result</h2>
+
+<p th:text="${message}" style="color: green;"></p>
+<p th:text="${error}" style="color: red;"></p>
+
+<!-- Display entities if needed -->
+<table th:if="${entities}" border="1">
+    <thead>
+    <tr>
+        <th>Student ID</th>
+        <th>Subject Name</th>
+        <th>Internals</th>
+        <th>Externals</th>
+        <th>Regulation</th>
+        <th>Attendance</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entity : ${entities}">
+        <td th:text="${entity.getId1}"></td>
+        <td th:text="${entity.getSubjectName}"></td>
+        <td th:text="${entity.internals}"></td>
+        <td th:text="${entity.externals}"></td>
+        <td th:text="${entity.regulation}"></td>
+        <td th:text="${entity.attendance}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
